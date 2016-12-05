@@ -11,12 +11,13 @@ import Card from './card';
 
 export default function List(props) {
 	let cardsData = props.cards;
-	console.log(props.cards);
+	// console.log(props.cards);
 	let cardsList = cardsData.map(card =>{
 		return (
-			<Card text="hello!" />
+			<Card text={card} />
 		);
 	});
+	// console.log(cardsList);
 	return (
 		<div className="card-list">
 			<h3>{props.title}</h3>

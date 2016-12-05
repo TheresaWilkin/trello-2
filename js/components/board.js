@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom';
 import List from './list';
 
 
-
-const listCards = ["blah", "blah2", "blah3"];
-
 export default function Board(props) {
+	let listData = props.lists;
+	let listOfLists = listData.map(list =>{
+		return (
+			<List title={list.title} cards={list.listCards} />
+			)
+	});
 	return (
 		<div className="board-list">
-			<List title="Listy" cards={listCards} />
+			<h1>{props.title}</h1>
+			{listOfLists}
 		</div>
 	);
-
 }
+
