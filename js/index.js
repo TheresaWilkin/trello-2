@@ -6,8 +6,6 @@ import ReactDOM  from 'react-dom';
 import Board from './components/board';
 
 document.addEventListener('DOMContentLoaded', () =>
-    ReactDOM.render(<Board />, document.getElementById('app'))
+    ReactDOM.render(<Board title='My board' />, document.getElementById('app'))
 );
 
-
-//testing git push
