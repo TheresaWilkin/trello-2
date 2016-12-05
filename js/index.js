@@ -6,9 +6,9 @@ import ReactDOM  from 'react-dom';
 import Board from './components/board';
 
 const input = [
-				{title: "list1", listCards:["blah", "blah2", "blah3"]}, 
-				{title: "list2", listCards:["bleh", "bleh2", "bleh3"]},
-				{title: "list3", listCards:["bluh", "bluh2", "bluh3"]}
+				{title: "Allen's List", listCards:["Go to Costco", "Do homework", "Get 8 hours of sleep"]}, 
+				{title: "Theresa's List", listCards:["Do homework", "Keep children alive", "Get partner to make cookies"]},
+				{title: "Chris' List", listCards:["Get colorful shirt", "Get new glasses", "Buy hi-def camera"]}
 				];
 
 document.addEventListener('DOMContentLoaded', () =>

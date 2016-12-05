@@ -1,0 +1,27 @@
+.card {
+	border: 2px solid grey;
+	background-color: white;
+	padding: 5px;
+	text-align: center;
+	margin: 5px;
+	padding: 20px;
+}
+
+.card-list {
+	background-color: aliceblue;
+	text-align: center;
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.board-list {
+	text-align: center;
+	border: 1px solid navy;
+	box-shadow: 0 0 3px navy;
+}
+
+#app {
+	margin: auto;
+	font-family: 'Roboto', sans-serif;
+}
