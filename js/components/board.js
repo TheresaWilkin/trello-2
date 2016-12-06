@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './list';
+import ListContainer from './list-container';
 
 
 export default function Board(props) {
-
-	
 	
 	let listData = props.lists;
 	let listOfLists = listData.map(list =>{
 		return (
-			<List title={list.title} cards={list.listCards}/>
+			<ListContainer title={list} />
 			)
 	});
 	return (
