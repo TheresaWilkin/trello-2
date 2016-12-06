@@ -15,20 +15,22 @@ export default class ListContainer extends React.Component {
 	}
 
 	onAddInputChanged(event) {
-		console.log("on text input changed");
+		this.setState({text: event.target.value});
 	}
 
 	onAddSubmit(event) {
 		event.preventDefault();
-		console.log("on submit form");
+		var newCards = this.state.cards.slice();    
+		newCards.push(this.state.text);   
+		this.setState({cards:newCards});
 	}
 
 	render() {
 		return (
-        <div className="list-container">
-            <List title={this.props.title} onSubmit={this.onAddSubmit} onChange={this.onAddInputChanged} cards={this.state.cards} />
-        </div>
-    );
+			<div className="list-container">
+				<List title={this.props.title} onSubmit={this.onAddSubmit} onChange={this.onAddInputChanged} cards={this.state.cards} />
+			</div>
+			);
 	}
 }
 
