@@ -10,7 +10,7 @@ export default function Board(props) {
 	let listData = props.lists;
 	let listOfLists = listData.map(list =>{
 		return (
-			<List title={list.title} cards={list.listCards} />
+			<List title={list.title} cards={list.listCards}/>
 			)
 	});
 	return (

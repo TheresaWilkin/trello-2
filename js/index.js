@@ -17,9 +17,8 @@ const state = {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-	console.log("loading");
+document.addEventListener('DOMContentLoaded', () => 
     ReactDOM.render(<Board title={state.title} lists={state.lists} />, document.getElementById('app'))
-}
+
 );
 
