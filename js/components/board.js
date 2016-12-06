@@ -4,6 +4,9 @@ import List from './list';
 
 
 export default function Board(props) {
+
+	
+	
 	let listData = props.lists;
 	let listOfLists = listData.map(list =>{
 		return (
