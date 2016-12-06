@@ -6,9 +6,9 @@ import ListContainer from './list-container';
 export default function Board(props) {
 	
 	let listData = props.lists;
-	let listOfLists = listData.map(list =>{
+	let listOfLists = listData.map((list, index) =>{
 		return (
-			<ListContainer title={list} />
+			<ListContainer title={list} key={index}/>
 			)
 	});
 	return (

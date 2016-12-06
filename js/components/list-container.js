@@ -8,7 +8,7 @@ export default class ListContainer extends React.Component {
 		super(props);
 		this.state = {
 			text: "",
-			cards: ["Dummy Data"]
+			cards: []
 		};
 		this.onAddInputChanged = this.onAddInputChanged.bind(this);
 		this.onAddSubmit = this.onAddSubmit.bind(this);
@@ -23,12 +23,14 @@ export default class ListContainer extends React.Component {
 		var newCards = this.state.cards.slice();    
 		newCards.push(this.state.text);   
 		this.setState({cards:newCards});
+		this.setState({text:""});
+
 	}
 
 	render() {
 		return (
 			<div className="list-container">
-				<List title={this.props.title} onSubmit={this.onAddSubmit} onChange={this.onAddInputChanged} cards={this.state.cards} />
+				<List title={this.props.title} onSubmit={this.onAddSubmit} onChange={this.onAddInputChanged} cards={this.state.cards} text={this.state.text}/>
 			</div>
 			);
 	}

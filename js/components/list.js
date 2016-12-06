@@ -4,9 +4,9 @@ import Card from './card';
 
 export default function List(props) {
 	let cardsData = props.cards;
-	let cardsList = cardsData.map(card =>{
+	let cardsList = cardsData.map((card, index) =>{
 		return (
-			<Card text={card} />
+			<Card text={card} key={index} />
 		);
 	});
 		return (
@@ -14,7 +14,7 @@ export default function List(props) {
             <h3>{props.title}</h3>
             {cardsList}
             <form onSubmit={props.onSubmit}>
-            	<input type="text" onChange={props.onChange} />
+            	<input type="text" value={props.text} onChange={props.onChange} />
             	<button type="submit">Submit</button>
             </form>
         </div>
