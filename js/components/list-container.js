@@ -21,10 +21,9 @@ export default class ListContainer extends React.Component {
 	onAddSubmit(event) {
 		event.preventDefault();
 		var newCards = this.state.cards.slice();    
-		newCards.push(this.state.text);   
+		newCards.push(this.state.text);
 		this.setState({cards:newCards});
 		this.setState({text:""});
-
 	}
 
 	render() {
@@ -32,7 +31,6 @@ export default class ListContainer extends React.Component {
 			<div className="list-container">
 				<List title={this.props.title} onSubmit={this.onAddSubmit} onChange={this.onAddInputChanged} cards={this.state.cards} text={this.state.text}/>
 			</div>
-			);
+		);
 	}
 }
-
