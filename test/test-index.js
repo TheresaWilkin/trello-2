@@ -6,6 +6,7 @@ import chai from 'chai';
 import Card from '../js/components/card';
 import List from '../js/components/list';
 import ListContainer from '../js/components/list-container';
+import Board from '../js/components/board';
 
 const should = chai.should();
 
@@ -95,5 +96,26 @@ describe('List Container Component', function() {
 	});
 });
 
+describe('Board component', function(){
+	it('Render board that has title and list of lists', function(){
+		const title = 'Star Wars 2';
+		const lists = ['cat', 'dog'];
 
+		const renderer = TestUtils.createRenderer();
+		renderer.render(<Board title={title} lists={lists}/>);
+		const result = renderer.getRenderOutput();
 
+		result.type.should.equal("div");
+		result.props.className.should.equal("board-list");
+
+		const boardList = result.props.children;
+		boardList.length.should.equal(2);
+		boardList[0].type.should.equal('h1');
+		boardList[0].props.children.should.equal(title);
+
+		const listOfLists = boardList[1];
+		listOfLists.length.should.equal(2);
+		listOfLists[0].props.title.should.equal(lists[0]);
+		listOfLists[1].props.title.should.equal(lists[1]);
+	})
+})

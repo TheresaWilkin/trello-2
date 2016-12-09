@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ListContainer from './list-container';
@@ -17,4 +18,3 @@ export default function Board(props) {
 		</div>
 	);
 }
-
