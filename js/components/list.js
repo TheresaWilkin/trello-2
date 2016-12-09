@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './card';
@@ -20,4 +21,3 @@ export default function List(props) {
         </div>
     );
 }
-
