@@ -2,11 +2,12 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import chai from 'chai';
-import List from '../js/components/list';
-
-const should = chai.should();
 
 import Card from '../js/components/card';
+import List from '../js/components/list';
+import ListContainer from '../js/components/list-container';
+
+const should = chai.should();
 
 describe('Card component', function() {
 	it('Renders a card', function() {
@@ -52,5 +53,47 @@ describe('List Component', function() {
 		cardsList.length.should.equal(2);
 		cardsList[0].props.text.should.equal(cards[0]);
 		cardsList[1].props.text.should.equal(cards[1]);
-	})
-})
+
+		const form = result.props.children[2];
+		form.type.should.equal("form");
+		const formChildren = form.props.children;
+		formChildren.length.should.equal(2);
+
+		const input = formChildren[0];
+		input.type.should.equal("input");
+		input.props.type.should.equal("text");
+		input.props.onChange.should.equal(onChange);
+		input.props.value.should.equal(text);
+
+		const button = formChildren[1];
+		button.type.should.equal("button");
+		button.props.type.should.equal("submit");
+		button.props.children.should.equal("Submit");
+	});
+});
+
+describe('List Container Component', function() {
+	it('Renders a list container', function() {
+		const title = 'Star Wars';
+
+		const renderer = TestUtils.createRenderer();
+		renderer.render(<ListContainer title={title} />);
+		const result = renderer.getRenderOutput()
+
+		result.type.should.equal("div");
+		result.props.className.should.equal("list-container");
+		result.props.children.type.should.equal(List);
+
+		const list = result.props.children;
+
+		list.props.title.should.equal(title);
+		list.props.cards.length.should.equal(0);
+		list.props.text.should.equal("");
+
+		list.props.onSubmit.should.not.equal(null);
+		list.props.onChange.should.not.equal(null);
+	});
+});
+
+
+
